@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">App2Bim</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="etUsuario">Usuario</string>
+    <string name="cbLembrar">Lembrar Senha</string>
+    <string name="btLogin">Login</string>
+    <string name="btCamera">Foto</string>
+    <string name="title_activity_principal">PrincipalActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="tvNPareados">Nenhum dispositivo Pareado</string>
+    <string name="title_activity_jogo_list">JogoListActivity</string>
+    <string name="title_activity_foto">FotoActivity</string>
+
+</resources>
