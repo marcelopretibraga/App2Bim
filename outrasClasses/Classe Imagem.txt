@@ -1,0 +1,14 @@
+Classe => Imagemnotificacao
+Atributos {
+    private Long idNotificacao  : default 1
+    private Long idAmbiente     : default 1 
+    private Long idSeqimagem    : sequencial 1, 2, 3, 4, 5
+    private String dsPathimagem : Pode deixar ""
+    private Date dtRecord       : null;
+    private Date dtUpdate		: null;
+    private String nrUUID       : UUID.randomUUID().toString();
+    private String nrUuidnotificacao :"1359133061295909ce9f753d-6116-4e14-96b8-ff5ecf5d93d4"
+    private String stExport          : Controle Interno
+    private Date   dtExport		     : Controle Interno 
+    private String Imagem            : Imagem Base 64
+}
