@@ -53,6 +53,20 @@
         android:drawableLeft="@drawable/ic_menu_camera"
         android:text="@string/btCamera"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btSaveAluno"
+        android:drawableLeft="@drawable/ic_person"
+        android:text="@string/btSaveAluno"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btUploadAluno"
+        android:drawableLeft="@drawable/ic_menu_camera"
+        android:text="@string/btUploadAluno"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="250dp"

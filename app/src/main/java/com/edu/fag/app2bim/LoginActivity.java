@@ -26,7 +26,10 @@ import android.widget.Toast;
 import com.edu.fag.app2bim.Adapter.AdapterBluetooth;
 import com.edu.fag.app2bim.Util.ByteUtil;
 import com.edu.fag.app2bim.Util.WSUtil;
+import com.edu.fag.app2bim.entity.Aluno;
 import com.edu.fag.app2bim.tarefas.DownloadEquipe;
+import com.edu.fag.app2bim.tarefas.DownloadJogo;
+import com.edu.fag.app2bim.tarefas.UploadAluno;
 import com.orm.SugarContext;
 import com.orm.SugarRecord;
 
@@ -51,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsuario, etSenha;
     private TextView tvDadosRecebidos;
     private CheckBox cbLembrar;
-    private Button btLogin, btCamera;
+    private Button btLogin, btCamera, btSaveAluno, btUploadAluno;
     private ListView lvPareados;
 
     private BluetoothAdapter mBtAdapter;
@@ -67,11 +70,6 @@ public class LoginActivity extends AppCompatActivity {
     private String texto = "";
     private int countByte = 0;
     private byte[] myBuffer = new byte[13];
-
-    private final static String NAMESPACE = "http://ws.wsintegrabolao.com.br/";
-    private final static String URL = "http://54.233.136.203:8080/WSIntegraBolao/funcoes";
-    private final static String SOAP_ACTION = "http://ws.wsintegrabolao.com.br/";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +139,8 @@ public class LoginActivity extends AppCompatActivity {
         lvPareados = findViewById(R.id.lvPareados);
         tvDadosRecebidos = findViewById(R.id.tvDadosRecebidos);
         btCamera = findViewById(R.id.btCamera);
+        btSaveAluno = findViewById(R.id.btSaveAluno);
+        btUploadAluno = findViewById(R.id.btUploadAluno);
 
         btCamera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,6 +163,32 @@ public class LoginActivity extends AppCompatActivity {
         });
         //carregaPareados();
 
+        btSaveAluno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                salvarAluno();
+            }
+        });
+
+        btUploadAluno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UploadAluno uploadAluno = new UploadAluno(LoginActivity.this);
+                uploadAluno.executeOnExecutor
+                        (AsyncTask.THREAD_POOL_EXECUTOR, new String[]{});
+            }
+        });
+    }
+
+    private void salvarAluno() {
+        Aluno aluno = new Aluno();
+        aluno.setIdAluno(123457);
+        aluno.setNmAluno("Marcelo Teste UPload");
+        aluno.setDsObservacao("Projeto Upload Aluno");
+        aluno.setNrUUID(UUID.randomUUID().toString());
+        aluno.setDsProfissao("Programador");
+        aluno.save();
+        Toast.makeText(LoginActivity.this,"Aluno Salvo com sucesso", Toast.LENGTH_LONG ).show();
     }
 
     private void carregaPareados() {

@@ -6,6 +6,8 @@
     <string name="cbLembrar">Lembrar Senha</string>
     <string name="btLogin">Login</string>
     <string name="btCamera">Foto</string>
+    <string name="btSaveAluno">Criar Aluno</string>
+    <string name="btUploadAluno">Upload Aluno</string>
     <string name="title_activity_principal">PrincipalActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
