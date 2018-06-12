@@ -1,0 +1,10 @@
+private int idAluno;
+private String nmAluno;
+private String dsObservacao;
+private Date dtNascimento;
+private String nrCpf;
+private String dsProfissao;
+private String nmMae;
+private String nmPai;
+private String nrTelefone;
+private String nrUUID;
